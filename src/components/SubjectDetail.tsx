@@ -11,8 +11,29 @@ interface SubjectDetailProps {
   onBack: () => void;
 }
 
+interface Lesson {
+  name: string;
+  lessons: string[];
+}
+
+interface Term {
+  name: string;
+  topics: Lesson[];
+}
+
+interface ClassData {
+  name: string;
+  terms: Record<string, Term>;
+}
+
+interface SubjectData {
+  name: string;
+  description: string;
+  classes: Record<string, ClassData>;
+}
+
 // Mock curriculum data structure
-const curriculumData = {
+const curriculumData: Record<string, SubjectData> = {
   mathematics: {
     name: 'Mathematics',
     description: 'Complete mathematics curriculum covering algebra, geometry, and statistics',

@@ -5,7 +5,7 @@ import {
   Calculator, 
   BookOpen, 
   Atom, 
-  Flask, 
+  Beaker, 
   Leaf, 
   Globe, 
   Clock, 
@@ -60,7 +60,7 @@ const subjects: Subject[] = [
     id: 'chemistry',
     name: 'Chemistry',
     description: 'Atomic Structure, Chemical Reactions',
-    icon: Flask,
+    icon: Beaker,
     color: 'text-orange-600',
     lessons: 85
   },
