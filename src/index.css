@@ -3,46 +3,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Uganda NCDC Curriculum Hub Design System */
+/* Uganda Lower Secondary Curriculum Hub Design System */
 @layer base {
   :root {
-    /* Brand Colors - Blue and Purple Theme */
-    --primary: 220 85% 57%; /* Deep blue */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 270 60% 70%; /* Purple accent */
-    --secondary-foreground: 210 40% 98%;
+    /* Brand Colors - Inspired by the template */
+    --primary: 221 83% 53%; /* #3a86ff */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 328 100% 54%; /* #ff006e */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 262 83% 58%; /* #8338ec */
+    --accent-foreground: 0 0% 100%;
     
     /* Educational UI Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --muted: 220 14.3% 95.9%; /* Light blue-gray */
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 270 35% 95%; /* Light purple */
-    --accent-foreground: 270 60% 20%;
+    --foreground: 210 11% 15%; /* #212529 */
+    --muted: 210 17% 98%; /* #f8f9fa */
+    --muted-foreground: 220 9% 46%;
+    --light: 210 17% 98%; /* #f8f9fa */
+    --dark: 210 11% 15%; /* #212529 */
     
-    /* Semantic Colors */
+    /* Success and Warning */
+    --success: 162 73% 46%; /* #06d6a0 */
+    --success-foreground: 0 0% 100%;
+    --warning: 48 100% 67%; /* #ffd166 */
+    --warning-foreground: 210 11% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Card and Border Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 220 85% 57%;
-    
-    /* Educational Success/Warning Colors */
-    --success: 142 76% 36%;
-    --success-foreground: 355.7 100% 97.3%;
-    --warning: 32 95% 44%;
-    --warning-foreground: 210 40% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --ring: 221 83% 53%;
     
     /* Layout */
-    --radius: 0.75rem;
+    --radius: 0.9375rem; /* 15px */
     --header-height: 4rem;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
     
-    /* Educational Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 85% 57%) 0%, hsl(270 60% 70%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 85% 57%) 0%, hsl(270 60% 70%) 50%, hsl(320 60% 75%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14.3% 97%) 100%);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 17% 96%) 0%, hsl(211 27% 84%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 17% 98%) 0%, hsl(211 27% 90%) 100%);
   }
 
   .dark {
@@ -74,7 +78,12 @@
   }
   
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply font-sans;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+    min-height: 100vh;
+    background-attachment: fixed;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
@@ -84,7 +93,7 @@
 }
 
 @layer components {
-  /* Educational Component Styles */
+  /* Modern Educational Component Styles */
   .hero-gradient {
     background: var(--gradient-hero);
   }
@@ -94,7 +103,21 @@
   }
   
   .subject-card {
-    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+    @apply bg-white rounded-2xl overflow-hidden border border-black/5 transition-all duration-300 hover:-translate-y-2;
+    box-shadow: var(--shadow);
+  }
+  
+  .subject-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  .subject-card-header {
+    @apply text-center text-white p-6;
+    background: var(--gradient-card);
+  }
+  
+  .subject-card-body {
+    @apply p-6;
   }
   
   .curriculum-section {
@@ -112,10 +135,37 @@
   .nav-item.active {
     @apply bg-primary text-primary-foreground;
   }
+  
+  .btn {
+    @apply px-5 py-2.5 rounded-full font-semibold cursor-pointer transition-all duration-300 border-0 outline-none;
+  }
+  
+  .btn:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary text-primary;
+  }
+  
+  .feature-card {
+    @apply bg-white rounded-2xl p-8 text-center transition-transform duration-300 hover:-translate-y-2;
+    box-shadow: var(--shadow);
+  }
+  
+  .feature-icon {
+    @apply w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6;
+    background: var(--gradient-primary);
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-dark {
+    color: hsl(var(--dark));
   }
 }

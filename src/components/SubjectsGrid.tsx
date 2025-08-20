@@ -148,51 +148,50 @@ const subjects: Subject[] = [
 
 const SubjectsGrid = ({ onSubjectSelect }: SubjectsGridProps) => {
   return (
-    <section className="py-16">
+    <section className="py-20 bg-white rounded-t-[2rem] -mt-8 relative z-10 shadow-2xl">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            NCDC Curriculum Subjects
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            All Subjects Covered
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive coverage of all Lower Secondary subjects aligned with 
-            Uganda's National Curriculum Development Centre standards.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Access complete notes, past papers, and study resources for every subject in the Ugandan Lower Secondary Curriculum
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {subjects.map((subject) => {
             const Icon = subject.icon;
             return (
-              <Card 
+              <div 
                 key={subject.id} 
                 className="subject-card cursor-pointer group"
                 onClick={() => onSubjectSelect(subject.id)}
               >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between">
-                    <Icon className={`w-8 h-8 ${subject.color}`} />
-                    <span className="text-sm text-muted-foreground">
-                      {subject.lessons} lessons
-                    </span>
-                  </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                    {subject.name}
-                  </CardTitle>
-                  <CardDescription className="text-sm">
+                {/* Card Header with Gradient */}
+                <div className="subject-card-header">
+                  <Icon className="w-12 h-12 mb-4 mx-auto" />
+                  <h3 className="text-xl font-bold">{subject.name}</h3>
+                </div>
+                
+                {/* Card Body */}
+                <div className="subject-card-body">
+                  <p className="text-gray-600 mb-4 text-sm">
                     {subject.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                  >
-                    Explore Curriculum
-                  </Button>
-                </CardContent>
-              </Card>
+                  </p>
+                  <div className="text-sm text-gray-500 mb-4 flex items-center">
+                    <BookOpen className="w-4 h-4 mr-2" />
+                    {subject.lessons} lessons available
+                  </div>
+                </div>
+                
+                {/* Card Footer */}
+                <div className="px-6 pb-6">
+                  <button className="w-full py-3 text-center bg-gray-50 text-primary font-semibold rounded-lg border-t border-gray-100 transition-all duration-300 hover:bg-primary hover:text-white">
+                    View Notes
+                  </button>
+                </div>
+              </div>
             );
           })}
         </div>

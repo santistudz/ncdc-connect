@@ -8,55 +8,50 @@ interface HeroProps {
 
 const Hero = ({ onExploreSubjects }: HeroProps) => {
   return (
-    <section className="relative py-20 sm:py-24 lg:py-32 hero-gradient">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      <div className="container relative">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Uganda Lower Secondary{' '}
-            <span className="text-yellow-300">Curriculum Hub</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto animate-fade-in">
-            Complete NCDC-aligned resources for Senior 1-4 students. 
-            Access structured lessons, past papers, and comprehensive study materials.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
-            <Button 
-              size="lg" 
-              variant="secondary"
-              onClick={onExploreSubjects}
-              className="text-lg px-8 py-4 bg-white text-primary hover:bg-white/90"
-            >
-              <BookOpen className="w-5 h-5 mr-2" />
-              Explore Subjects
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+    <section className="py-20 lg:py-24">
+      <div className="container">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Hero Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              All Your{' '}
+              <span className="text-primary">Lower Secondary</span>{' '}
+              Notes in One Place
+            </h1>
             
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
-            >
-              <Users className="w-5 h-5 mr-2" />
-              Register / Login
-            </Button>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl">
+              Access comprehensive curriculum notes, study guides, and exam resources for all subjects in Uganda's Lower Secondary Education.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                size="lg" 
+                onClick={onExploreSubjects}
+                className="btn btn-primary text-lg px-8 py-4"
+              >
+                <BookOpen className="w-5 h-5 mr-2" />
+                Explore Subjects
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="btn btn-outline text-lg px-8 py-4"
+              >
+                <Users className="w-5 h-5 mr-2" />
+                Watch Video Tour
+              </Button>
+            </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">14</div>
-              <div className="text-blue-200">NCDC Subjects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">4</div>
-              <div className="text-blue-200">Senior Classes</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">100+</div>
-              <div className="text-blue-200">Lessons</div>
+          {/* Hero Image */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                alt="Ugandan Students Learning"
+                className="max-w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
