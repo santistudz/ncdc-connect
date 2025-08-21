@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -102,6 +102,10 @@ const curriculumData: Record<string, SubjectData> = {
 
 const SubjectDetail = ({ subjectId, onBack }: SubjectDetailProps) => {
   const [activeClass, setActiveClass] = useState('senior-1');
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   
   // Get subject data or return default structure
   const subjectData = curriculumData[subjectId as keyof typeof curriculumData] || {

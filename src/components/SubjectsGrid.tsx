@@ -187,7 +187,14 @@ const SubjectsGrid = ({ onSubjectSelect }: SubjectsGridProps) => {
                 
                 {/* Card Footer */}
                 <div className="px-6 pb-6">
-                  <button className="w-full py-3 text-center bg-gray-50 text-primary font-semibold rounded-lg border-t border-gray-100 transition-all duration-300 hover:bg-primary hover:text-white">
+                  <button 
+                    type="button"
+                    className="w-full py-3 text-center bg-gray-50 text-primary font-semibold rounded-lg border-t border-gray-100 transition-all duration-300 hover:bg-primary hover:text-white"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSubjectSelect(subject.id);
+                    }}
+                  >
                     View Notes
                   </button>
                 </div>

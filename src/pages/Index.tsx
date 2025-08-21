@@ -21,10 +21,12 @@ const Index = () => {
 
   const handleSubjectSelect = (subjectId: string) => {
     setSelectedSubject(subjectId);
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   };
 
   const handleBackToSubjects = () => {
     setSelectedSubject(null);
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   };
 
   const renderContent = () => {
