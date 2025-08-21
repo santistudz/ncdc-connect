@@ -8,6 +8,7 @@ import ResourcesSection from '@/components/ResourcesSection';
 import ExamsSection from '@/components/ExamsSection';
 import AboutSection from '@/components/AboutSection';
 import Features from '@/components/Features';
+import BottomTabs from '@/components/BottomTabs';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -67,7 +68,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header activeTab={activeTab} onTabChange={setActiveTab} />
-      <main>
+      <main className="pb-20">
         {renderContent()}
       </main>
       
@@ -146,6 +147,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      
+      <BottomTabs activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   );
 };
