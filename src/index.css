@@ -9,6 +9,7 @@
     /* Brand Colors - Inspired by the template */
     --primary: 221 83% 53%; /* #3a86ff */
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 83% 63%; /* lighter version of primary */
     --secondary: 328 100% 54%; /* #ff006e */
     --secondary-foreground: 0 0% 100%;
     --accent: 262 83% 58%; /* #8338ec */
