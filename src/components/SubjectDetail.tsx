@@ -97,6 +97,367 @@ const curriculumData: Record<string, SubjectData> = {
         }
       }
     }
+  },
+  biology: {
+    name: 'Biology',
+    description: 'Uganda Lower Secondary Biology Curriculum (S1-S4) - New NCDC Standards',
+    classes: {
+      'senior-1': {
+        name: 'Senior 1',
+        terms: {
+          'term-1': {
+            name: 'Term 1: Diversity of Living Things',
+            topics: [
+              {
+                name: 'Chapter 1: Introduction to Biology',
+                lessons: [
+                  'Meaning of biology and life processes',
+                  'Differences between plants and animals',
+                  'Seven life processes (MRS GREN)',
+                  'Applications of biology in daily life',
+                  'Distinguishing living from non-living things',
+                  'Plant vs animal characteristics'
+                ]
+              },
+              {
+                name: 'Chapter 2: Cells',
+                lessons: [
+                  'Cell theory and basic concepts',
+                  'Animal cell structure and organelles',
+                  'Plant cell structure and organelles',
+                  'Differences between plant and animal cells',
+                  'Specialized cells and their functions',
+                  'Levels of organization: cells to organs'
+                ]
+              }
+            ]
+          },
+          'term-2': {
+            name: 'Term 2: Diversity of Living Things',
+            topics: [
+              {
+                name: 'Chapter 3: Classification',
+                lessons: [
+                  'Rationale for classifying organisms',
+                  'Hierarchical levels of classification',
+                  'The five kingdoms of life',
+                  'Kingdom Monera characteristics',
+                  'Kingdom Protista characteristics',
+                  'Kingdom Fungi, Plantae, and Animalia'
+                ]
+              },
+              {
+                name: 'Chapter 4: Insects',
+                lessons: [
+                  'Body plan of insects (head, thorax, abdomen)',
+                  'External anatomy and functions',
+                  'Insect metamorphosis (complete vs incomplete)',
+                  'Beneficial roles of insects',
+                  'Harmful effects of insects',
+                  'Insect adaptations and diversity'
+                ]
+              }
+            ]
+          },
+          'term-3': {
+            name: 'Term 3: Diversity of Living Things',
+            topics: [
+              {
+                name: 'Chapter 5: Flowering Plants',
+                lessons: [
+                  'External structure of flowering plants',
+                  'Functions of roots, stems, and leaves',
+                  'Flower structure and reproduction',
+                  'Fruit and seed formation',
+                  'Plant modifications and adaptations',
+                  'Monocot vs dicot differences'
+                ]
+              }
+            ]
+          }
+        }
+      },
+      'senior-2': {
+        name: 'Senior 2',
+        terms: {
+          'term-1': {
+            name: 'Term 1: Soil and Environment',
+            topics: [
+              {
+                name: 'Chapter 1: Physical and Chemical Properties of Soil',
+                lessons: [
+                  'Soil types: sand, clay, and loam',
+                  'Soil constituents and composition',
+                  'Soil texture and structure',
+                  'Soil pH and its importance',
+                  'Water retention and drainage',
+                  'Soil fertility factors'
+                ]
+              },
+              {
+                name: 'Chapter 2: Soil Erosion and Conservation',
+                lessons: [
+                  'Causes of soil erosion',
+                  'Effects of erosion on fertility',
+                  'Conservation methods: terracing and contour plowing',
+                  'Role of vegetation in soil conservation',
+                  'The nitrogen cycle',
+                  'Microorganisms in soil fertility'
+                ]
+              }
+            ]
+          },
+          'term-2': {
+            name: 'Term 2: Nutrition',
+            topics: [
+              {
+                name: 'Chapter 3: Nutrition (Nutrients and Dietary Needs)',
+                lessons: [
+                  'Six classes of nutrients',
+                  'Sources and functions of nutrients',
+                  'Balanced diet principles',
+                  'Malnutrition: deficiency diseases',
+                  'Body Mass Index (BMI) calculation',
+                  'Nutritional requirements by age'
+                ]
+              },
+              {
+                name: 'Chapter 4: Nutrition in Green Plants (Photosynthesis)',
+                lessons: [
+                  'Autotrophic vs heterotrophic nutrition',
+                  'Photosynthesis process and equation',
+                  'Factors affecting photosynthesis',
+                  'Leaf structure adaptations',
+                  'Experiments on photosynthesis',
+                  'Importance of photosynthesis'
+                ]
+              }
+            ]
+          },
+          'term-3': {
+            name: 'Term 3: Nutrition and Transport',
+            topics: [
+              {
+                name: 'Chapter 5: Nutrition in Mammals (Digestion)',
+                lessons: [
+                  'Enzymes in digestion',
+                  'Effect of pH and temperature on enzymes',
+                  'Types of mammalian teeth',
+                  'Human alimentary canal structure',
+                  'Digestion and absorption processes',
+                  'Dental care and hygiene'
+                ]
+              }
+            ]
+          }
+        }
+      },
+      'senior-3': {
+        name: 'Senior 3',
+        terms: {
+          'term-1': {
+            name: 'Term 1: Respiration and Excretion',
+            topics: [
+              {
+                name: 'Chapter 1: Gaseous Exchange (Respiration)',
+                lessons: [
+                  'Need for specialized respiratory systems',
+                  'Human respiratory system structure',
+                  'Mechanism of breathing',
+                  'Gas exchange in lungs',
+                  'Effects of smoking and pollution',
+                  'Respiratory diseases'
+                ]
+              },
+              {
+                name: 'Chapter 2: Respiration – Aerobic and Anaerobic',
+                lessons: [
+                  'Aerobic vs anaerobic respiration',
+                  'Word equations for respiration',
+                  'Applications in fermentation',
+                  'Respiration during exercise',
+                  'Energy yield comparison',
+                  'Practical experiments on respiration'
+                ]
+              },
+              {
+                name: 'Chapter 3: Excretion in Animals',
+                lessons: [
+                  'Role and importance of excretion',
+                  'Human excretory organs',
+                  'Kidney structure and nephrons',
+                  'Urine formation process',
+                  'Liver functions in excretion',
+                  'Dialysis and kidney diseases'
+                ]
+              }
+            ]
+          },
+          'term-2': {
+            name: 'Term 2: Coordination',
+            topics: [
+              {
+                name: 'Chapter 4: Chemical Coordination (Hormones)',
+                lessons: [
+                  'Endocrine glands and hormones',
+                  'Differences between hormones and enzymes',
+                  'Feedback control mechanisms',
+                  'Blood sugar regulation',
+                  'Hormonal disorders: diabetes, goitre',
+                  'Diet and hormone health'
+                ]
+              },
+              {
+                name: 'Chapter 5: Nervous Coordination',
+                lessons: [
+                  'Structure of the nervous system',
+                  'Neurons and nerve impulses',
+                  'Brain regions and functions',
+                  'Reflex arc components',
+                  'Voluntary vs involuntary responses',
+                  'Effects of drugs on the nervous system'
+                ]
+              },
+              {
+                name: 'Chapter 6: Receptor Organs (Eye and Ear)',
+                lessons: [
+                  'Human eye structure and function',
+                  'Vision defects and correction',
+                  'Human ear structure',
+                  'Hearing mechanism',
+                  'Common eye and ear disorders',
+                  'Care of sense organs'
+                ]
+              }
+            ]
+          },
+          'term-3': {
+            name: 'Term 3: Locomotion and Growth',
+            topics: [
+              {
+                name: 'Chapter 7: Locomotion in Mammals',
+                lessons: [
+                  'Human skeleton structure',
+                  'Types of bones and joints',
+                  'Muscle action and movement',
+                  'Antagonistic muscle pairs',
+                  'Causes and relief of muscle cramps',
+                  'Exercise and skeletal health'
+                ]
+              },
+              {
+                name: 'Chapter 8: Growth in Plants and Animals',
+                lessons: [
+                  'Growth vs development concepts',
+                  'Cell division (mitosis) for growth',
+                  'Seed structure and germination',
+                  'Germination conditions',
+                  'Growth curves and measurements',
+                  'Factors affecting growth'
+                ]
+              },
+              {
+                name: 'Chapter 9: Development in Plants and Animals',
+                lessons: [
+                  'Life cycles and metamorphosis',
+                  'Human puberty and development',
+                  'Embryonic development',
+                  'Plant development and flowering',
+                  'Hormonal control of development',
+                  'Environmental factors in development'
+                ]
+              }
+            ]
+          }
+        }
+      },
+      'senior-4': {
+        name: 'Senior 4',
+        terms: {
+          'term-1': {
+            name: 'Term 1: Reproduction',
+            topics: [
+              {
+                name: 'Chapter 10: Asexual Reproduction in Plants',
+                lessons: [
+                  'Definition of asexual reproduction',
+                  'Natural vegetative propagation methods',
+                  'Artificial propagation techniques',
+                  'Advantages and disadvantages',
+                  'Agricultural applications',
+                  'Commercial plant propagation'
+                ]
+              },
+              {
+                name: 'Chapter 11: Sexual Reproduction in Plants',
+                lessons: [
+                  'Flower structure and functions',
+                  'Pollination: self vs cross',
+                  'Fertilization process',
+                  'Fruit and seed formation',
+                  'Seed and fruit types',
+                  'Seed dispersal mechanisms'
+                ]
+              }
+            ]
+          },
+          'term-2': {
+            name: 'Term 2: Human Reproduction and Genetics',
+            topics: [
+              {
+                name: 'Chapter 12: Sexual Reproduction in Humans',
+                lessons: [
+                  'Male and female reproductive systems',
+                  'Menstrual cycle stages',
+                  'Gametes and fertilization',
+                  'Embryonic and fetal development',
+                  'Role of placenta and antenatal care',
+                  'Birth control and STI prevention'
+                ]
+              },
+              {
+                name: 'Chapter 13: Inheritance (Genetics)',
+                lessons: [
+                  'DNA and chromosomes basics',
+                  'Mitosis vs meiosis overview',
+                  'Mendelian inheritance patterns',
+                  'Dominant and recessive traits',
+                  'Human sex determination (XX/XY)',
+                  'Sex-linked inheritance examples'
+                ]
+              }
+            ]
+          },
+          'term-3': {
+            name: 'Term 3: Variation and Ecology',
+            topics: [
+              {
+                name: 'Chapter 14: Variation and Natural Selection',
+                lessons: [
+                  'Sources of variation: genetic and environmental',
+                  'Mutations: beneficial, neutral, harmful',
+                  'Genetic disorders examples',
+                  'Principles of natural selection',
+                  'Evolution and adaptation',
+                  'Selective breeding in agriculture'
+                ]
+              },
+              {
+                name: 'Chapter 15: Concept of Ecology',
+                lessons: [
+                  'Ecological definitions and concepts',
+                  'Species, population, and community',
+                  'Habitat and ecosystem concepts',
+                  'Biotic and abiotic factors',
+                  'Ecosystem interactions',
+                  'Environmental conservation'
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
   }
 };
 
