@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowLeft, BookOpen, FileText, Clock, CheckCircle } from 'lucide-react';
 
 interface SubjectDetailProps {
@@ -31,6 +32,52 @@ interface SubjectData {
   description: string;
   classes: Record<string, ClassData>;
 }
+
+interface LessonContent {
+  subject: string;
+  chapter: string;
+  lessonTitle: string;
+  content: string;
+}
+
+// Lesson content data
+const lessonContentData: LessonContent[] = [
+  {
+    subject: 'Biology',
+    chapter: 'Chapter 2: Cells',
+    lessonTitle: 'Cell theory and basic concepts',
+    content: 'Cell theory states: 1. All living things are made of cells. 2. Cells are the basic unit of life. 3. All cells come from pre-existing cells. Basic organelles include the nucleus (controls cell activities), mitochondria (produces energy), and cell membrane (controls what enters and exits the cell).'
+  },
+  {
+    subject: 'Biology',
+    chapter: 'Chapter 2: Cells',
+    lessonTitle: 'Differences between plant and animal cells',
+    content: 'Plant cells have a rigid cell wall made of cellulose, large vacuoles for storage, and chloroplasts for photosynthesis. Animal cells lack a cell wall, have smaller vacuoles, and do not have chloroplasts.'
+  },
+  {
+    subject: 'Biology',
+    chapter: 'Chapter 2: Cells',
+    lessonTitle: 'Specialized cells and their functions',
+    content: 'Cells specialize to perform specific functions. Examples: Red blood cells are specialized to carry oxygen (they contain hemoglobin). Root hair cells in plants are specialized to absorb water and minerals (they have a large surface area). Muscle cells are specialized for contraction (they contain protein fibers).'
+  },
+  {
+    subject: 'Biology',
+    chapter: 'Chapter 2: Cells',
+    lessonTitle: 'Levels of organization: cells to organs',
+    content: 'The levels of biological organization are: Cell -> Tissue -> Organ -> Organ System -> Organism. Example: Muscle cell -> Muscle tissue -> Heart (organ) -> Circulatory system -> Human.'
+  }
+];
+
+// Helper function to get lesson content
+const getLessonContent = (subject: string, chapter: string, lessonTitle: string): string => {
+  const lesson = lessonContentData.find(
+    (item) => 
+      item.subject === subject && 
+      item.chapter === chapter && 
+      item.lessonTitle.toLowerCase().includes(lessonTitle.toLowerCase())
+  );
+  return lesson ? lesson.content : 'Lesson content coming soon. This lesson will be updated with detailed notes shortly.';
+};
 
 // Mock curriculum data structure
 const curriculumData: Record<string, SubjectData> = {
@@ -547,22 +594,39 @@ const SubjectDetail = ({ subjectId, onBack }: SubjectDetailProps) => {
                                   </div>
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                  <div className="space-y-2 pt-2">
-                                    {topic.lessons.map((lesson, lessonIndex) => (
-                                      <div 
-                                        key={lessonIndex}
-                                        className="lesson-item flex items-center justify-between cursor-pointer"
-                                      >
-                                        <div className="flex items-center">
-                                          <CheckCircle className="w-4 h-4 mr-3 text-muted-foreground" />
-                                          <span>Lesson {lessonIndex + 1}: {lesson}</span>
-                                        </div>
-                                        <Button variant="ghost" size="sm">
-                                          View
-                                        </Button>
-                                      </div>
-                                    ))}
-                                  </div>
+                                   <div className="space-y-2 pt-2">
+                                     {topic.lessons.map((lesson, lessonIndex) => (
+                                       <div 
+                                         key={lessonIndex}
+                                         className="lesson-item flex items-center justify-between cursor-pointer"
+                                       >
+                                         <div className="flex items-center">
+                                           <CheckCircle className="w-4 h-4 mr-3 text-muted-foreground" />
+                                           <span>Lesson {lessonIndex + 1}: {lesson}</span>
+                                         </div>
+                                         <Dialog>
+                                           <DialogTrigger asChild>
+                                             <Button variant="ghost" size="sm">
+                                               View
+                                             </Button>
+                                           </DialogTrigger>
+                                           <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                                             <DialogHeader>
+                                               <DialogTitle>{lesson}</DialogTitle>
+                                               <DialogDescription>
+                                                 {topic.name} - {subjectData.name}
+                                               </DialogDescription>
+                                             </DialogHeader>
+                                             <div className="mt-4 p-4 bg-muted rounded-lg">
+                                               <p className="text-sm leading-relaxed">
+                                                 {getLessonContent(subjectData.name, topic.name, lesson)}
+                                               </p>
+                                             </div>
+                                           </DialogContent>
+                                         </Dialog>
+                                       </div>
+                                     ))}
+                                   </div>
                                 </AccordionContent>
                               </AccordionItem>
                             ))}
